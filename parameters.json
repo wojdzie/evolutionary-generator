@@ -1,8 +1,8 @@
 {
-  "width": null,
-  "height": null,
-  "startEnergy": null,
-  "moveEnergy": null,
-  "plantEnergy": null,
-  "jungleRatio": null
+  "width": 100,
+  "height": 30,
+  "startEnergy": 100,
+  "moveEnergy": 2,
+  "plantEnergy": 15,
+  "jungleRatio": 0.1
 }

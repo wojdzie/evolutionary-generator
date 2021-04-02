@@ -1,4 +1,4 @@
-package com.wojdzie.evolutionary.genrator;
+package com.wojdzie.evolutionary.generator;
 
 public class EvolutionaryGeneratorApplication {
 
