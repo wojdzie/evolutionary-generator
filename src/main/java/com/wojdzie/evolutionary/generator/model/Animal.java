@@ -1,10 +1,17 @@
 package com.wojdzie.evolutionary.generator.model;
 
-import java.awt.*;
+import java.util.List;
+import java.util.Random;
 
 public class Animal {
 
-    private Point coordinates;
+    private Turn turn;
     private int energy;
-    private int[] genes = new int[32];
+    private List<Integer> genes;
+
+    public Animal() {
+        turn = Turn.getRandomTurn();
+    }
+
+
 }

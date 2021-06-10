@@ -1,5 +1,16 @@
 package com.wojdzie.evolutionary.generator.model;
 
-public interface Area {
-    boolean isJungle();
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Area {
+
+    private List<Animal> animals = new ArrayList<>();
+    private List<Plant> plants = new ArrayList<>();
+
+    abstract boolean isJungle();
+
+    void removeDeadAnimals() {
+        animals.removeIf(Animal::isDead);
+    }
 }

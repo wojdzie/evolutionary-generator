@@ -1,29 +1,37 @@
 package com.wojdzie.evolutionary.generator.model;
 
+import java.util.Random;
+
 public enum Turn {
-    NO_TURN(0),
-    DIAGONALLY_RIGHT(1),
+
+    TOP(0),
+    UPPER_RIGHT(1),
     RIGHT(2),
-    DIAGONALLY_BACK_RIGHT(3),
-    BACK(4),
-    DIAGONALLY_BACK_LEFT(5),
+    BOTTOM_RIGHT(3),
+    BOTTOM(4),
+    BOTTOM_LEFT(5),
     LEFT(6),
-    DIAGONALLY_LEFT(7);
+    UPPER_LEFT(7);
 
-    private final int turn;
+    private final int value;
 
-    Turn(int turn) {
-        if (!isTurnInRange(turn)) {
-            throw new IndexOutOfBoundsException("Turn should be in range 0...7");
+    Turn(int value) {
+        this.value = value;
+    }
+    public static Turn getRandomTurn() {
+        Random random = new Random();
+        int value = random.nextInt(8);
+
+        for (Turn turn : Turn.values()) {
+            if (value == turn.getValue()) {
+                return turn;
+            }
         }
-       this.turn = turn;
+
+        return null;
     }
 
-    private boolean isTurnInRange(int turn) {
-        return turn >= 0 && turn <= 7;
-    }
-
-    public int getTurn() {
-        return turn;
+    public int getValue() {
+        return value;
     }
 }
